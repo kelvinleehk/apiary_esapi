@@ -40,14 +40,7 @@ Expire token immediate and unregister device from push notification
 
     + Header
 
-            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"        
-    
-    + Body
-    
-            {
-                fbId: 1032326715,
-                deviceId: "a22n1k2ey5rn6e9s52celpa5ygu2upa686uh3tcu"
-            }
+            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
         
 + Response 204
 
@@ -107,10 +100,7 @@ Users related resources of **Electric Soul API*.
         
 
 ## User Image [/user/{userId}/image]
-+ Parameter
 
-    + userId (required, number, `123`) ... Numeric `userId` of any user's id.
-    
 ### Upload / update user profile image [POST]
 
 Client needs to check if the user = self
@@ -124,7 +114,6 @@ Client needs to check if the user = self
     + Body
         
             { 
-                userId: 123,
                 image: "/images/iphone.png" 
             }
             
@@ -146,7 +135,6 @@ Except profile image
     + Body
         
             {
-                userId: 132,
                 about: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
                 name: "John Doe",
                 email: "john.doe@example.com",
@@ -298,9 +286,6 @@ Users who are "friends" on Facebook and using the app
         }
 
 ## Is admin [/user/{userId}/is_admin]
-+ Parameter
-
-    + userId (required, number, `123`) ... Numeric `userId` of current logged in user's id.
     
 ### Check is admin [GET]
 
