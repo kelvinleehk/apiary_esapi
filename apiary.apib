@@ -160,40 +160,36 @@ Except profile image
 
 + Response 200 (application/json)
             
-          {
-                followers: {
-                    [{
-                        userId: 123,
-                        name: "John Doe",
-                        image: "/images/iphone.png"
-                    }],
-                    "total": 1
+        {
+            "users": [
+                {
+                    userId: 123,
+                    name: "John Doe",
+                    image: "/images/iphone.png",
+                    status: 1
                 },
-                followings: {
-                    [{
-                        userId: 123,
-                        name: "John Doe",
-                        image: "/images/iphone.png"
-                    }],
-                    "total": 1
+                {
+                    userId: 123,
+                    name: "John Doe",
+                    image: "/images/iphone.png",
+                    status: 2
                 },
-                plurs: {
-                    [{
-                        userId: 123,
-                        name: "John Doe",
-                        image: "/images/iphone.png"
-                    }],
-                    "total": 1
+                {
+                    userId: 123,
+                    name: "John Doe",
+                    image: "/images/iphone.png",
+                    status: 3
                 },
-                others: {
-                    [{
-                        userId: 123,
-                        name: "John Doe",
-                        image: "/images/iphone.png"
-                    }],
-                    "total": 1
+                {
+                    userId: 123,
+                    name: "John Doe",
+                    image: "/images/iphone.png",
+                    status: 4
                 }
-            }
+            ],
+            "total": 4,
+            "page": 1
+        }
 
 ## Follow User [/user/{userId}/follow]
 + Parameter
