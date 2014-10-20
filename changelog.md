@@ -2,8 +2,6 @@
 * Changed login to use fb token
 * Changed all images to use absolute path instead of relative path
 * Changed event and user profile image uploading input to be BLOBs
-
-### 2014-10-13
 * Removed userId from endpoints where it relates to the logged in user:
 	* /user/{userId}/image is now /user/image
 	* /user/logout is parameterless and only requires the token
