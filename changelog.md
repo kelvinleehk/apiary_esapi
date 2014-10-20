@@ -1,4 +1,7 @@
 ### 2014-10-20
+* Added Bookmark event endpoint
+* Added Remove Event endpoint
+* Changed all IDs to be using ObjectId instead of numeric IDs
 * Changed login to use fb token
 * Changed all images to use absolute path instead of relative path
 * Changed event and user profile image uploading input to be BLOBs

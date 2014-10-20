@@ -52,7 +52,7 @@ Users related resources of **Electric Soul API*.
 ## User [/user/{userId}]
 + Parameter
 
-    + userId (required, number, `123`) ... Numeric `userId` of any user's id.
+    + userId (required, number, `cdb4156d2`) ... ObjectId `userId` of any user's id.
     
 ### Get a user profile [GET]
 
@@ -72,26 +72,26 @@ Users related resources of **Electric Soul API*.
                 email: "john.doe@example.com",
                 event: [
                     going: [
-                        {eventId: 123},
-                        {eventId: 123}
+                        {eventId: "cdb4156d2"},
+                        {eventId: "cdb4156d2"}
                     ],
                     attended: [
-                        {eventId: 123},
-                        {eventId: 123}
+                        {eventId: "cdb4156d2"},
+                        {eventId: "cdb4156d2"}
                     }
                 ],
                 connections: {
                     followers: [
-                        {userId: 123},
-                        {userId: 123},
+                        {userId: "cdb4156d2"},
+                        {userId: "cdb4156d2"},
                     ],
                     followings: [
-                        {userId: 123},
-                        {userId: 123},
+                        {userId: "cdb4156d2"},
+                        {userId: "cdb4156d2"},
                     ],
                     plurs: [
-                        {userId: 123},
-                        {userId: 123},
+                        {userId: "cdb4156d2"},
+                        {userId: "cdb4156d2"},
                     ]
                 }
             }
@@ -99,7 +99,7 @@ Users related resources of **Electric Soul API*.
 
         
 
-## User Image [/user/{userId}/image]
+## User Image [/user/image]
 
 ### Upload / update user profile image [POST]
 
@@ -163,25 +163,25 @@ Except profile image
         {
             "users": [
                 {
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png",
                     status: 1
                 },
                 {
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png",
                     status: 2
                 },
                 {
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png",
                     status: 3
                 },
                 {
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png",
                     status: 4
@@ -194,7 +194,7 @@ Except profile image
 ## Follow User [/user/{userId}/follow]
 + Parameter
 
-    + userId (required, number, `123`) ... Numeric `userId` of any user's id.
+    + userId (required, number, `cdb4156d2`) ... ObjectId `userId` of any user's id.
     
 ### Follow a user [PUT]
 + Request (application/json)
@@ -208,7 +208,7 @@ Except profile image
 ## UnFollow User [/user/{userId}/unfollow]
 + Parameter
 
-    + userId (required, number, `123`) ... Numeric `userId` of any user's id.
+    + userId (required, number, `cdb4156d2`) ... ObjectId `userId` of any user's id.
     
 ### Unfollow / unplur a user [PUT]
 + Request (application/json)
@@ -249,7 +249,7 @@ Users who are "friends" on Facebook and using the app
         {
             followers: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -257,7 +257,7 @@ Users who are "friends" on Facebook and using the app
             },
             followings: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -265,7 +265,7 @@ Users who are "friends" on Facebook and using the app
             },
             plurs: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -273,7 +273,7 @@ Users who are "friends" on Facebook and using the app
             },
             others: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -281,7 +281,7 @@ Users who are "friends" on Facebook and using the app
             }
         }
 
-## Is admin [/user/{userId}/is_admin]
+## Is admin [/user/is_admin]
     
 ### Check is admin [GET]
 
@@ -313,7 +313,7 @@ Events related resources of **Electric Soul API*.
         
         {
             attended: [{
-                    eventId: 123,
+                    eventId: "a1b491d0",
                     title: "DITCH Thursday w/ Bassjackers",
                     timedate: "2011-05-26T07:56:00.123Z",
                     location: "1600 Amphitheatre Pkwy, Mountain View, CA",
@@ -322,7 +322,7 @@ Events related resources of **Electric Soul API*.
                     heroImage: "http://electricsoulapp.com/images/iphone.png"
                 },
                 {
-                    eventId: 123,
+                    eventId: "a1b491d0",
                     title: "DITCH Thursday w/ Bassjackers",
                     timedate: "2011-05-26T07:56:00.123Z",
                     location: "1600 Amphitheatre Pkwy, Mountain View, CA",
@@ -331,7 +331,7 @@ Events related resources of **Electric Soul API*.
                     heroImage: "http://electricsoulapp.com/images/iphone.png"
                 }],
             upcoming: [{
-                    eventId: 123,
+                    eventId: "a1b491d0",
                     title: "DITCH Thursday w/ Bassjackers",
                     timedate: "2011-05-26T07:56:00.123Z",
                     location: "1600 Amphitheatre Pkwy, Mountain View, CA",
@@ -340,7 +340,7 @@ Events related resources of **Electric Soul API*.
                     heroImage: "http://electricsoulapp.com/images/iphone.png"
                 },
                 {
-                    eventId: 123,
+                    eventId: "a1b491d0",
                     title: "DITCH Thursday w/ Bassjackers",
                     timedate: "2011-05-26T07:56:00.123Z",
                     location: "1600 Amphitheatre Pkwy, Mountain View, CA",
@@ -349,7 +349,7 @@ Events related resources of **Electric Soul API*.
                     heroImage: "http://electricsoulapp.com/images/iphone.png"
                 }],
             going: [{
-                    eventId: 123,
+                    eventId: "a1b491d0",
                     title: "DITCH Thursday w/ Bassjackers",
                     timedate: "2011-05-26T07:56:00.123Z",
                     location: "1600 Amphitheatre Pkwy, Mountain View, CA",
@@ -358,7 +358,7 @@ Events related resources of **Electric Soul API*.
                     heroImage: "http://electricsoulapp.com/images/iphone.png"
                 },
                 {
-                    eventId: 123,
+                    eventId: "a1b491d0",
                     title: "DITCH Thursday w/ Bassjackers",
                     timedate: "2011-05-26T07:56:00.123Z",
                     location: "1600 Amphitheatre Pkwy, Mountain View, CA",
@@ -399,7 +399,7 @@ Events related resources of **Electric Soul API*.
 
 + Parameter
 
-    + eventId (required, number, `1`) ... Numeric `eventId` of the Note to perform action with. Has example value.
+    + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
         
 
 ### Get an event detail [GET]
@@ -438,7 +438,7 @@ Client should check if current user is Admin.
     + Body
     
                 {
-                    eventId: 123,
+                    eventId: "a1b491d0",
                     title: "DITCH Thursday w/ Bassjackers",
                     description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.",
                     heroImage: BLOB,
@@ -459,7 +459,7 @@ Client should check if current user is Admin.
 
 + Parameter
 
-    + eventId (required, number, `1`) ... Numeric `eventId` of the Note to perform action with. Has example value.
+    + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
     
 ### Get a list of attendents [GET]
 
@@ -474,7 +474,7 @@ Client should check if current user is Admin.
         {
             followers: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -482,7 +482,7 @@ Client should check if current user is Admin.
             },
             followings: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -490,7 +490,7 @@ Client should check if current user is Admin.
             },
             plurs: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -498,7 +498,7 @@ Client should check if current user is Admin.
             },
             others: {
                 [{
-                    userId: 123,
+                    userId: "cdb4156d2",
                     name: "John Doe",
                     image: "http://electricsoulapp.com/images/iphone.png"
                 }],
@@ -510,7 +510,7 @@ Client should check if current user is Admin.
 
 + Parameter
 
-    + eventId (required, number, `1`) ... Numeric `eventId` of the Note to perform action with. Has example value.
+    + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
     
 ### "Attend" an event [PUT]
 + Request (application/json)
@@ -525,7 +525,7 @@ Client should check if current user is Admin.
 
 + Parameter
 
-    + eventId (required, number, `1`) ... Numeric `eventId` of the Note to perform action with. Has example value.
+    + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
     
 ### "Unattend" an event [PUT]
 
@@ -537,6 +537,37 @@ Client should check if current user is Admin.
 
 + response 204
 
+## Bookmark Event [/event/{eventId}/bookmark]
+
++ Parameter
+
+    + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
+    
+### Bookmarked an event [PUT]
+
++ Request (application/json)
+
+    + Header
+
+            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
+
++ response 204
+
+## Delete Event [/event/{eventId}/delete]
+
++ Parameter
+
+    + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
+    
+### Bookmarked an event [PUT]
+
++ Request (application/json)
+
+    + Header
+
+            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
+
++ response 204
 
 # Group Settings 
 <!--TODO: Get notification setting-->
