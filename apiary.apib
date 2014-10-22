@@ -121,75 +121,7 @@ Client needs to check if the user = self
 
         { success: true }
     
-## Users [/users]
-### Create / update a user profile [POST]
 
-Except profile image
-
-+ Request (application/json)
-
-    + Header
-    
-            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
-    
-    + Body
-        
-            {
-                about: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-                name: "John Doe",
-                email: "john.doe@example.com",
-            }
-
-+ Response 200 (application/json)
-
-        { success: true }
-
-
-## Query Users Collection [/users/query]
-### Get a list of users by keyword [POST]
-
-+ Request (application/json)
-
-    + Header
-
-            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
-
-    + Body
-    
-            { query: "john" }
-
-+ Response 200 (application/json)
-            
-        {
-            "users": [
-                {
-                    userId: "cdb4156d2",
-                    name: "John Doe",
-                    image: "http://electricsoulapp.com/images/iphone.png",
-                    status: 1
-                },
-                {
-                    userId: "cdb4156d2",
-                    name: "John Doe",
-                    image: "http://electricsoulapp.com/images/iphone.png",
-                    status: 2
-                },
-                {
-                    userId: "cdb4156d2",
-                    name: "John Doe",
-                    image: "http://electricsoulapp.com/images/iphone.png",
-                    status: 3
-                },
-                {
-                    userId: "cdb4156d2",
-                    name: "John Doe",
-                    image: "http://electricsoulapp.com/images/iphone.png",
-                    status: 4
-                }
-            ],
-            "total": 4,
-            "page": 1
-        }
 
 ## Follow User [/user/{userId}/follow]
 + Parameter
@@ -295,6 +227,75 @@ Users who are "friends" on Facebook and using the app
 
         { isAdmin: true }
 
+## Users [/users]
+### Create / update a user profile [POST]
+
+Except profile image
+
++ Request (application/json)
+
+    + Header
+    
+            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
+    
+    + Body
+        
+            {
+                about: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+                name: "John Doe",
+                email: "john.doe@example.com",
+            }
+
++ Response 200 (application/json)
+
+        { success: true }
+
+
+## Query Users Collection [/users{?q}]
+### Get a list of users by keyword [GET]
+
++ Parameter
+
+    + q (optional, string) ... Query string of user name
+
++ Request (application/json)
+
+    + Header
+
+            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
+
++ Response 200 (application/json)
+            
+        {
+            "users": [
+                {
+                    userId: "cdb4156d2",
+                    name: "John Doe",
+                    image: "http://electricsoulapp.com/images/iphone.png",
+                    status: 1
+                },
+                {
+                    userId: "cdb4156d2",
+                    name: "John Doe",
+                    image: "http://electricsoulapp.com/images/iphone.png",
+                    status: 2
+                },
+                {
+                    userId: "cdb4156d2",
+                    name: "John Doe",
+                    image: "http://electricsoulapp.com/images/iphone.png",
+                    status: 3
+                },
+                {
+                    userId: "cdb4156d2",
+                    name: "John Doe",
+                    image: "http://electricsoulapp.com/images/iphone.png",
+                    status: 4
+                }
+            ],
+            "total": 4,
+            "page": 1
+        }
 
 # Group Events
 Events related resources of **Electric Soul API*.
