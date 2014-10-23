@@ -1,3 +1,21 @@
+## 2014-10-23
+* Remove bookmark event
+* Fix incorrectly named search event endpoint
+
+## 2014-10-22
+* Add user query status legend to blueprint
+* Change user query APIs to use query parameters
+* Change event query APIs to use query parameters
+* Add new events API
+    * Upcoming events
+    * Attending
+    * Attended events
+* Add new friends API
+    * Following users
+    * Users who follow
+    * PLURed
+    * Not connected users
+
 ### 2014-10-20
 * Added Bookmark event endpoint
 * Added Remove Event endpoint
