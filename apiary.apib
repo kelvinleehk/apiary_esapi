@@ -20,8 +20,8 @@ The authentication has the following attributes:
 
 + Request (application/json)
 
-        { fbToken: "YMPnWPmGQI1Oz2xHkmsdLzAn2b0tT5tDoiJ8msTg",
-        deviceId: "a22n1k2ey5rn6e9s52celpa5ygu2upa686uh3tcu" }
+        { "fbToken": "YMPnWPmGQI1Oz2xHkmsdLzAn2b0tT5tDoiJ8msTg",
+        "deviceId": "a22n1k2ey5rn6e9s52celpa5ygu2upa686uh3tcu" }
 
 + Response 200 (application/json)
 
@@ -448,7 +448,7 @@ Except profile image
 Events related resources of **Electric Soul API*.
 
 
-## Attending Event Collection [/events/upcoming{?q,userId}]
+## Attending Event Collection [/events/attending{?q,userId}]
 ### Get a list of attending events [GET]
 
 + Parameter
@@ -721,21 +721,6 @@ Client should check if current user is Admin.
 
 + response 204
 
-## Bookmark Event [/event/{eventId}/bookmark]
-
-+ Parameter
-
-    + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
-    
-### Bookmarked an event [PUT]
-
-+ Request (application/json)
-
-    + Header
-
-            x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
-
-+ response 204
 
 ## Delete Event [/event/{eventId}/delete]
 
@@ -743,7 +728,7 @@ Client should check if current user is Admin.
 
     + eventId (required, number, `a1b491d0`) ... ObjectId `eventId` of the Note to perform action with. Has example value.
     
-### Bookmarked an event [PUT]
+### Delete an event [PUT]
 
 + Request (application/json)
 
