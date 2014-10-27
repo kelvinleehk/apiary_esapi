@@ -790,6 +790,17 @@ Client should check if current user is Admin.
     
 + response 204
 
+### Get notification settings [GET]
+
++ response 200 (application/json)
+
+        { 
+            receiveNewEventNotifcation: true,
+            receiveNewPLURNotifcation: true,
+            receiveNewFollowerNotification: true,
+            receiveNewMessageNotification: true
+        }
+
 ## Report bugs [/settings/report]
 
 When new report is received, system should fire a notification email to admin@electricsoulapp.com with user info (i.e. name and email address) and the message body.
