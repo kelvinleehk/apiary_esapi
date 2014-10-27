@@ -741,9 +741,9 @@ Client should check if current user is Admin.
 
 # Group Settings 
 
-## New Event notification [/settings/new-event]
+## Notifications [/settings/notification]
 
-### Turn on / off new event notification [POST]
+### Turn on / off notifications [PUT]
 
 + Request (application/json)
 
@@ -755,14 +755,15 @@ Client should check if current user is Admin.
 
             { 
                 userId: "cdb4156d2",
-                receiveNewEventNotifcation: true
+                receiveNewEventNotifcation: true,
+                receiveNewPLURNotifcation: true,
+                receiveNewFollowerNotification: true,
+                receiveNewMessageNotification: true
             }
     
 + response 204
 
 
 
-<!--TODO: Get notification setting-->
-<!--TODO: Update notification setting-->
 <!--TODO: Get information-->
 <!--TODO: Report bug-->
