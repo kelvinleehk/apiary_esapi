@@ -251,7 +251,7 @@ Except profile image
         { success: true }
 
 
-## Query Users Collection [/users{?q}]
+## Query Users Collection [/users{?q,page}]
 ### Get a list of users by keyword [GET]
 
 "status" -- status with a particular user
@@ -261,9 +261,12 @@ Except profile image
 - 3: PLURed
 - 4: none
 
+Each page iteration should return 20 results
+
 + Parameter
 
-    + q (optional, string) ... Query string of user name
+    + q (optional, string) ... Query parameter of user name
+    + page (optional, integer) ... Query parameter of page number
 
 + Request (application/json)
 
@@ -305,12 +308,15 @@ Except profile image
         }
 
 
-## Query Follower Collection [/users/follower{?q}]
+## Query Follower Collection [/users/follower{?q,page}]
 ### Get a list of followers by keyword [GET]
 
+Each page iteration should return 20 results
+
 + Parameter
 
-    + q (optional, string) ... Query string of user name
+    + q (optional, string) ... Query parameter of user name
+    + page (optional, integer) ... Query parameter of page number
 
 + Request (application/json)
 
@@ -351,12 +357,15 @@ Except profile image
             "page": 1
         }
 
-## Query Following Collection [/users/following{?q}]
+## Query Following Collection [/users/following{?q,page}]
 ### Get a list of users currently following by keyword [GET]
 
+Each page iteration should return 20 results
+
 + Parameter
 
-    + q (optional, string) ... Query string of user name
+    + q (optional, string) ... Query parameter of user name
+    + page (optional, integer) ... Query parameter of page number
 
 + Request (application/json)
 
@@ -397,12 +406,15 @@ Except profile image
             "page": 1
         }
 
-## Query PLUR Collection [/users/plur{?q}]
+## Query PLUR Collection [/users/plur{?q,page}]
 ### Get a list of PLURed users by keyword [GET]
+
+Each page iteration should return 20 results
 
 + Parameter
 
-    + q (optional, string) ... Query string of user name
+    + q (optional, string) ... Query parameter of user name
+    + page (optional, integer) ... Query parameter of page number
 
 + Request (application/json)
 
@@ -448,13 +460,14 @@ Except profile image
 Events related resources of **Electric Soul API*.
 
 
-## Attending Event Collection [/events/attending{?q,userId}]
+## Attending Event Collection [/events/attending{?q,userId,page}]
 ### Get a list of attending events [GET]
 
 + Parameter
 
     + q (optional, string) ... query string.
-    + userId (required, string) ... current logged in user's ID
+    + userId (optional, string) ... user ID. If not specified current logged-in user id will be used
+    + page (optional, integer) ... page number
 
 + Request (applicaton/json)
 
@@ -464,32 +477,37 @@ Events related resources of **Electric Soul API*.
 
 + Response 200 (application/json)
 
-        [{
-            eventId: "a1b491d0",
-            title: "DITCH Thursday w/ Bassjackers",
-            timedate: "2011-05-26T07:56:00.123Z",
-            location: "1600 Amphitheatre Pkwy, Mountain View, CA",
-            goingCount: 2,
-            friendCount: 2,
-            heroImage: "http://electricsoulapp.com/images/iphone.png"
-        },
         {
-            eventId: "a1b491d0",
-            title: "DITCH Thursday w/ Bassjackers",
-            timedate: "2011-05-26T07:56:00.123Z",
-            location: "1600 Amphitheatre Pkwy, Mountain View, CA",
-            goingCount: 2,
-            friendCount: 2,
-            heroImage: "http://electricsoulapp.com/images/iphone.png"
-        }]
+            [{
+                eventId: "a1b491d0",
+                title: "DITCH Thursday w/ Bassjackers",
+                timedate: "2011-05-26T07:56:00.123Z",
+                location: "1600 Amphitheatre Pkwy, Mountain View, CA",
+                goingCount: 2,
+                friendCount: 2,
+                heroImage: "http://electricsoulapp.com/images/iphone.png"
+            },
+            {
+                eventId: "a1b491d0",
+                title: "DITCH Thursday w/ Bassjackers",
+                timedate: "2011-05-26T07:56:00.123Z",
+                location: "1600 Amphitheatre Pkwy, Mountain View, CA",
+                goingCount: 2,
+                friendCount: 2,
+                heroImage: "http://electricsoulapp.com/images/iphone.png"
+            }]
+            total: 2,
+            page: 1
+        }
 
-## Attended Event Collection [/events/attended{?q,userId}]
+## Attended Event Collection [/events/attended{?q,userId,page}]
 ### Get a list of attended events [GET]
 
 + Parameter
 
     + q (optional, string) ... query string.
-    + userId (required, string) ... current logged in user's ID
+    + userId (optional, string) ... user ID. If not specified current logged-in user id will be used
+    + page (optional, integer) ... page number
     
 + Request (applicaton/json)
 
@@ -499,31 +517,37 @@ Events related resources of **Electric Soul API*.
 
 + Response 200 (application/json)
 
-        [{
-            eventId: "a1b491d0",
-            title: "DITCH Thursday w/ Bassjackers",
-            timedate: "2011-05-26T07:56:00.123Z",
-            location: "1600 Amphitheatre Pkwy, Mountain View, CA",
-            goingCount: 2,
-            friendCount: 2,
-            heroImage: "http://electricsoulapp.com/images/iphone.png"
-        },
-        {
-            eventId: "a1b491d0",
-            title: "DITCH Thursday w/ Bassjackers",
-            timedate: "2011-05-26T07:56:00.123Z",
-            location: "1600 Amphitheatre Pkwy, Mountain View, CA",
-            goingCount: 2,
-            friendCount: 2,
-            heroImage: "http://electricsoulapp.com/images/iphone.png"
-        }]
+         {
+            [{
+                eventId: "a1b491d0",
+                title: "DITCH Thursday w/ Bassjackers",
+                timedate: "2011-05-26T07:56:00.123Z",
+                location: "1600 Amphitheatre Pkwy, Mountain View, CA",
+                goingCount: 2,
+                friendCount: 2,
+                heroImage: "http://electricsoulapp.com/images/iphone.png"
+            },
+            {
+                eventId: "a1b491d0",
+                title: "DITCH Thursday w/ Bassjackers",
+                timedate: "2011-05-26T07:56:00.123Z",
+                location: "1600 Amphitheatre Pkwy, Mountain View, CA",
+                goingCount: 2,
+                friendCount: 2,
+                heroImage: "http://electricsoulapp.com/images/iphone.png"
+            }]
+            total: 2,
+            page: 1
+        }
         
-## Upcoming Event Collection [/events/upcoming{?q}]
+## Upcoming Event Collection [/events/upcoming{?q,userId,page}]
 ### Get a list of upcoming events [GET]
 
 + Parameter
 
     + q (optional, string) ... query string.
+    + userId (optional, string) ... user ID. If not specified current logged-in user id will be used
+    + page (optional, integer) ... page number
     
 + Request (applicaton/json)
 
@@ -533,24 +557,28 @@ Events related resources of **Electric Soul API*.
 
 + Response 200 (application/json)
 
-        [{
-            eventId: "a1b491d0",
-            title: "DITCH Thursday w/ Bassjackers",
-            timedate: "2011-05-26T07:56:00.123Z",
-            location: "1600 Amphitheatre Pkwy, Mountain View, CA",
-            goingCount: 2,
-            friendCount: 2,
-            heroImage: "http://electricsoulapp.com/images/iphone.png"
-        },
         {
-            eventId: "a1b491d0",
-            title: "DITCH Thursday w/ Bassjackers",
-            timedate: "2011-05-26T07:56:00.123Z",
-            location: "1600 Amphitheatre Pkwy, Mountain View, CA",
-            goingCount: 2,
-            friendCount: 2,
-            heroImage: "http://electricsoulapp.com/images/iphone.png"
-        }]
+            [{
+                eventId: "a1b491d0",
+                title: "DITCH Thursday w/ Bassjackers",
+                timedate: "2011-05-26T07:56:00.123Z",
+                location: "1600 Amphitheatre Pkwy, Mountain View, CA",
+                goingCount: 2,
+                friendCount: 2,
+                heroImage: "http://electricsoulapp.com/images/iphone.png"
+            },
+            {
+                eventId: "a1b491d0",
+                title: "DITCH Thursday w/ Bassjackers",
+                timedate: "2011-05-26T07:56:00.123Z",
+                location: "1600 Amphitheatre Pkwy, Mountain View, CA",
+                goingCount: 2,
+                friendCount: 2,
+                heroImage: "http://electricsoulapp.com/images/iphone.png"
+            }]
+            total: 2,
+            page: 1
+        }
 
 ## Events [/events]
 ### Create an event [PUT]
