@@ -1,3 +1,10 @@
+## 2014-10-27
+* Add notificaiton settings API
+* Add bug report API
+* Force fbToken key to be string by adding double quotes around theme
+* Add paginations to event and user queries
+* Update user query collection parameter descriptions
+
 ## 2014-10-23
 * Remove bookmark event
 * Fix incorrectly named search event endpoint
