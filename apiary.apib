@@ -17,6 +17,7 @@ The authentication has the following attributes:
 
 - If user is logged in for the first time, an empty user object with an id will be created automatically associated with the facebook id.
 - isAdmin status should be stored locally
+- System will register the device ID for push notification at the same time
 
 + Request (application/json)
 
@@ -32,7 +33,8 @@ The authentication has the following attributes:
         }
 
 ## Sign out [/user/logout]
-Expire token immediate and unregister device from push notification
+- Expire token immediate and unregister device from push notification
+- It also unregister device ID for notification
 
 ### Sign out [POST]
 
@@ -41,6 +43,11 @@ Expire token immediate and unregister device from push notification
     + Header
 
             x-access-token: "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
+            
+    + Body
+            {
+                "deviceId": "a22n1k2ey5rn6e9s52celpa5ygu2upa686uh3tcu"
+            }
         
 + Response 204
 
